@@ -20,6 +20,9 @@ app.post('/api/notes', (req, res) => {
     let currentNotes = JSON.parse(getStringFromFile('db/db.json'));
     let newNote = req.body;
 
+    // Give this note a unique id so it can be referenced later for deletion
+    newNote.id = new Date().getTime();
+
     currentNotes.push(newNote);
     writeStringToFile('db/db.json', JSON.stringify(currentNotes));
 
