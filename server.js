@@ -23,10 +23,37 @@ app.post('/api/notes', (req, res) => {
     // Give this note a unique id so it can be referenced later for deletion
     newNote.id = new Date().getTime();
 
+    // Save our new notes list to our database
     currentNotes.push(newNote);
     writeStringToFile('db/db.json', JSON.stringify(currentNotes));
 
     res.json(newNote);
+});
+
+// Delete an existing note by id
+app.delete('/api/notes/:id', (req, res) => {
+    let currentNotes = JSON.parse(getStringFromFile('db/db.json'));
+    let deleteID = req.params.id;
+    let deletedElement = null;
+
+    // Find the note to delete
+    // Here, the deleteID is a string, while the element.id is an integer
+    let index = currentNotes.findIndex(element => element.id === parseInt(deleteID));
+
+    if (index != -1) {
+        // Save the delete element
+        deletedElement = currentNotes[index];
+
+        currentNotes.splice(index, 1);
+
+        // Save new notes list to database
+        writeStringToFile('db/db.json', JSON.stringify(currentNotes));
+    } else {
+        return res.send('That is an invalid note id.');
+    }
+
+    // return the deleted element
+    return res.json(deletedElement);
 });
 
 // Send notes.html for /notes
