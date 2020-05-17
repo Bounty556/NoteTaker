@@ -11,8 +11,19 @@ app.use(express.json());
 
 // Get db.json as an object and return
 app.get('/api/notes', (req, res) => {
-    let data = getStringFromFile('db/db.json');
-    res.json(JSON.parse(data));
+    let data = JSON.parse(getStringFromFile('db/db.json'));
+    res.json(data);
+});
+
+// Add new note
+app.post('/api/notes', (req, res) => {
+    let currentNotes = JSON.parse(getStringFromFile('db/db.json'));
+    let newNote = req.body;
+
+    currentNotes.push(newNote);
+    writeStringToFile('db/db.json', JSON.stringify(currentNotes));
+
+    res.json(newNote);
 });
 
 // Send notes.html for /notes
@@ -31,4 +42,10 @@ app.listen(PORT, function() {
 
 function getStringFromFile(filePath) {
     return fs.readFileSync(path.join(__dirname, filePath), 'utf-8');
+}
+
+function writeStringToFile(filePath, data) {
+    fs.writeFile(path.join(__dirname, filePath), data, (err) => {
+        if (err) throw err;
+    });
 }
