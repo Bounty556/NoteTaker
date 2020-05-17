@@ -8,8 +8,14 @@ const PORT = 8000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Send index.html for the homepage
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../index.html'));
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
+// Send notes.html for /notes
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/notes.html'));
 });
 
 app.listen(PORT, function() {
