@@ -9,6 +9,9 @@ const PORT = 8000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Host our static files
+app.use(express.static('public'))
+
 // Get db.json as an object and return
 app.get('/api/notes', (req, res) => {
     let data = JSON.parse(getStringFromFile('db/db.json'));
