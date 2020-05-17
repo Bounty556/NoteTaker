@@ -1,56 +1,46 @@
-# Unit 11 Express Homework: Note Taker
+![Language](https://img.shields.io/badge/language-javascript-blue) ![LastCommit](https://img.shields.io/github/last-commit/Bounty556/NoteTaker?style=flat-square) ![CommitActivity](https://img.shields.io/github/commit-activity/m/Bounty556/NoteTaker)
+
+# Note Taker
+
+
 
 ## Description
+The Note Taker tool is an easy way to create and keep track of any notes you want to take. Simply click 'Get Started' and begin jotting away! The current note is saved when you click on the 'save' icon in the top right, and you can delete them with the click of a button (specifically the trash can icon) whenever you need. All of your saved notes are listed on the left hand side of the page, while the entirety of the right side is dedicated to writing new notes and editing old ones.
 
-Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
+## Table of Contents
+    * [Usage](#usage)
+    * [License](#license)
+    * [Contributing](#contributing)
+    * [Questions](#questions)
 
-* The application frontend has already been created, it's your job to build the backend and connect the two.
+## Usage
+To use, simply click 'Get Started'. This takes you to the note taking page, where you can edit the current note by typing in the 'Note Title' and 'Note Text' boxes on the right. To save the current note, click on the 'save' icon at the top right. Your new note will then show on the left side of the screen, in the note list. To edit or view an existing note, click on one of the notes on the left. To delete an existing note, click the red 'trash can' icon next to the note's title on the left.
 
-* The following HTML routes should be created:
+## License
+MIT License
 
-  * GET `/notes` - Should return the `notes.html` file.
+Copyright (c) 2020 Jacob Peterson
 
-  * GET `*` - Should return the `index.html` file
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-* The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-* The following API routes should be created:
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-  * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
+## Contributing
+If you have any ideas for this tool, please create an issue first in Github: https://help.github.com/en/github/managing-your-work-on-github/creating-an-issue. You can then create a pull request once it's been debated and accepted: https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request.
 
-  * POST `/api/notes` - Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
-
-  * DELETE `/api/notes/:id` - Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
-
-## User Story
-
-AS A user, I want to be able to write and save notes
-
-I WANT to be able to delete notes I've written before
-
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
-
-## Business Context
-
-For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
-
-## Acceptance Criteria
-
-Application should allow users to create and save notes.
-
-Application should allow users to view previously saved notes.
-
-Application should allow users to delete previously saved notes.
-
-- - -
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+## Questions
+Inquiries? Send them to: Jacob Peterson ![Github](https://avatars1.githubusercontent.com/u/12930451?v=4&s=32)
