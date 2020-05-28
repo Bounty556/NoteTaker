@@ -8,10 +8,10 @@ This app is hosted at https://immense-spire-78493.herokuapp.com/
 The Note Taker tool is an easy way to create and keep track of any notes you want to take. Simply click 'Get Started' and begin jotting away! The current note is saved when you click on the 'save' icon in the top right, and you can delete them with the click of a button (specifically the trash can icon) whenever you need. All of your saved notes are listed on the left hand side of the page, while the entirety of the right side is dedicated to writing new notes and editing old ones.
 
 ## Table of Contents
-    * [Usage](#usage)
-    * [License](#license)
-    * [Contributing](#contributing)
-    * [Questions](#questions)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Questions](#questions)
 
 ## Usage
 To use, simply click 'Get Started'. This takes you to the note taking page, where you can edit the current note by typing in the 'Note Title' and 'Note Text' boxes on the right. To save the current note, click on the 'save' icon at the top right. Your new note will then show on the left side of the screen, in the note list. To edit or view an existing note, click on one of the notes on the left. To delete an existing note, click the red 'trash can' icon next to the note's title on the left.
